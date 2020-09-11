@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Node.js (TypeScript) API',
+    title: 'modoo-recycling',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,5 +15,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-emotion`,
   ],
 }
