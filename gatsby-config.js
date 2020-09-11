@@ -14,5 +14,6 @@ module.exports = {
         icon: 'src/images/recycling-icon.png',
       },
     },
+    `gatsby-plugin-typescript`,
   ],
 }

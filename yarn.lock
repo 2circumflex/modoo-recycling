@@ -2168,6 +2168,11 @@ babel-plugin-remove-graphql-queries@^2.9.11:
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.9.11.tgz#595074df4f79ca1df2a01bb3d71d0234ab5865d5"
   integrity sha512-iN+ua4GIKM4T4tc89Lh0cDf8E3z6SV3xXcdMgcmDtCIEkvBNKOsxcjLhPqk78aLr7E3UTJ8wUpLu1Ap29dH6Eg==
 
+babel-plugin-remove-graphql-queries@^2.9.18:
+  version "2.9.18"
+  resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.9.18.tgz#0c62490f44ec61bc6cf1b2d4aca0315007e9180b"
+  integrity sha512-7lr9taus0LfqQuHQFytwrxdd2aMw/GBllyNzl+DWJ9Zg2LwCxlzELtqiy7h7xjTj16fX9+oNXgiJy7Xeo1UN/A==
+
 babel-plugin-transform-react-remove-prop-types@^0.4.24:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.24.tgz#f2edaf9b4c6a5fbe5c1d678bfb531078c1555f3a"
@@ -5208,6 +5213,19 @@ gatsby-plugin-typescript@^2.4.12:
     "@babel/preset-typescript" "^7.10.1"
     "@babel/runtime" "^7.10.3"
     babel-plugin-remove-graphql-queries "^2.9.11"
+
+gatsby-plugin-typescript@^2.4.19:
+  version "2.4.19"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.4.19.tgz#ae644cf973e07b6266da17bb47dae0e0bfaeeb23"
+  integrity sha512-DMKmTxJZz8qsDvesAt1PJm43pgEe83Kv90TDL5tZ5tqQ0XwwgADHG9p0yPJSqmc1xRtsChaDGnSpnRdUC2Oi3Q==
+  dependencies:
+    "@babel/core" "^7.10.3"
+    "@babel/plugin-proposal-nullish-coalescing-operator" "^7.10.1"
+    "@babel/plugin-proposal-numeric-separator" "^7.10.1"
+    "@babel/plugin-proposal-optional-chaining" "^7.10.3"
+    "@babel/preset-typescript" "^7.10.1"
+    "@babel/runtime" "^7.10.3"
+    babel-plugin-remove-graphql-queries "^2.9.18"
 
 gatsby-react-router-scroll@^3.0.10:
   version "3.0.10"
@@ -11303,6 +11321,11 @@ typescript@3.9.3:
   version "3.9.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.3.tgz#d3ac8883a97c26139e42df5e93eeece33d610b8a"
   integrity sha512-D/wqnB2xzNFIcoBG9FG8cXRDjiqSTbG2wd8DMZeQyJlP1vfTkIxH4GKveWaEBYySKIg+USu+E+EDIR47SqnaMQ==
+
+typescript@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.2.tgz#7ea7c88777c723c681e33bf7988be5d008d05ac2"
+  integrity sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
 
 unc-path-regex@^0.1.2:
   version "0.1.2"

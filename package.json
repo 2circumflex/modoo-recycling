@@ -6,13 +6,16 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "lint": "eslint ./ --ext .js,.jsx,.ts,.tsx && tsc -p ./ --noEmit",
-    "format": "eslint . --max-warnings 0 --ext .ts,.tsx,.js,.jsx --fix"
+    "format": "eslint . --max-warnings 0 --ext .ts,.tsx,.js,.jsx --fix",
+    "typecheck": "tsc --noEmit",
+    "prebuild": "yarn run typecheck"
   },
   "dependencies": {
     "gatsby": "^2.18.14",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-typescript": "^2.4.19",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0"
@@ -27,6 +30,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.1"
+    "eslint-plugin-react-hooks": "^4.1.1",
+    "typescript": "^4.0.2"
   }
 }

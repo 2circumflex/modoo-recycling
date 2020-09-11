@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import '../styles/index.css'
 
-function Index() {
+const Index: React.FC = () => {
   return (
     <main>
       <Helmet>
