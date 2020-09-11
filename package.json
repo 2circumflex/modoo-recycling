@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "gatsby",
+  "name": "modoo-recycling",
   "version": "1.0.0",
   "scripts": {
     "dev": "gatsby develop",
