@@ -16,5 +16,16 @@ module.exports = {
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Noto Sans KR`,
+            variants: [`100`, `300`, `400`, `500`, `700`, `900`]
+          },
+        ],
+      },
+    }
   ],
 }
