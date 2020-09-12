@@ -8,7 +8,7 @@ const Index: React.FC = () => {
       <Helmet>
         <title>모두의 재활용</title>
       </Helmet>
-      <h1>모두의 재활용</h1>
+      <div>ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</div>
     </Layout>
   )
 }
