@@ -2,6 +2,7 @@ import React from 'react'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { headerMaxWidth, headerHeight, headerHorizontalPadding } from 'utils/const'
+import Button from 'components/Button'
 
 const Header: React.FC = () => {
   return (
@@ -57,7 +58,10 @@ const Header: React.FC = () => {
             justifyContent: 'flex-end'
           }}
         >
-          <span>버튼</span>
+          <Button
+            title='분리수거방법'
+            destination='/how-to'
+          />
         </div>
       </div>
     </div>

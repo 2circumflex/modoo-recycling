@@ -8,7 +8,18 @@ const Index: React.FC = () => {
       <Helmet>
         <title>모두의 재활용</title>
       </Helmet>
-      <div>ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</div>
+      <div
+        css={{
+          display: 'flex',
+          flex: 1,
+          flexGrow: 1,
+          height: '100%',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        재활용합시다!
+      </div>
     </Layout>
   )
 }
