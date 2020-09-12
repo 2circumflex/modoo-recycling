@@ -8,6 +8,7 @@ const HowTo: React.FC = () => {
         <title>How-to</title>
       </Helmet>
       <h1>How-to</h1>
+      {/* TODO(sujin): how-to 내용 추가 */}
     </div>
   )
 }
