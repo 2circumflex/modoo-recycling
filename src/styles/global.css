@@ -4,6 +4,7 @@ html, body, #___gatsby {
 
 body {
     margin: 0px;
+    font-family: "Noto Sans KR", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica";
 }
 
 div[role="group"][tabindex] {
