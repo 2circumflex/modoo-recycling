@@ -30,27 +30,35 @@ const Header: React.FC = () => {
           maxWidth: headerMaxWidth
         }}
       >
-        <div>
-          <span
-            css={{
-              fontFamily: 'Noto Sans KR',
-              fontWeight: 100,
-              fontSize: '20px'
-            }}
-          >
-            모두의
-          </span>
-          <br />
-          <span
-            css={{
-              fontFamily: 'Noto Sans KR',
-              fontWeight: 100,
-              fontSize: '20px'
-            }}
-          >
-            재활용
-          </span>
-        </div>
+        <a
+          href='/'
+          css={{
+            textDecoration: 'none',
+            color: 'black'
+          }}
+        >
+          <div>
+            <span
+              css={{
+                fontFamily: 'Noto Sans KR',
+                fontWeight: 100,
+                fontSize: '20px'
+              }}
+            >
+              모두의
+            </span>
+            <br />
+            <span
+              css={{
+                fontFamily: 'Noto Sans KR',
+                fontWeight: 100,
+                fontSize: '20px'
+              }}
+            >
+              재활용
+            </span>
+          </div>
+        </a>
         <div
           css={{
             flex: 1,
