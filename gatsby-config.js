@@ -27,6 +27,15 @@ module.exports = {
         ],
       },
     },
-    `gatsby-alias-imports`
+    `gatsby-alias-imports`,
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`ko`],
+        defaultLanguage: `ko`,
+        redirect: false,
+      },
+    },
   ],
 }
