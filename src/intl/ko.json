@@ -3,5 +3,13 @@
     "notfound": {
       "header": "페이지를 찾을 수 없습니다",
       "description": "페이지가 존재하지 않습니다."
+    },
+    "index": {
+      "title": "모두의 재활용",
+      "modoo_easy_recycling": "♻️ 모두 쉽게 재활용 하자!",
+      "introduce_01": "재활용 분리수거.. 헷갈리고 어렵지 않았나요?",
+      "introduce_02": "지금 모두의 재활용과 올바른 재활용 방법을 실천해봐요.",
+      "section_01": "내용입니다1",
+      "section_02": "내용입니다2"
     }
   }
