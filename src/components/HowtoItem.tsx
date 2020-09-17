@@ -1,27 +1,26 @@
 import React from 'react'
+import { useIntl } from 'gatsby-plugin-intl'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
 interface HowtoItemProps {
-  data: {
-    title: string
-    image: string
-    content: string[]
-  }
+  title: string
+  image: string
+  content: string[]
 }
 
-const contentWrapper = css({
+const cssContentWrapper = css({
   width: '100%',
   margin: '100px 0'
 })
 
-const header = css({
+const cssHeader = css({
   display: 'flex',
   margin: '15px 0'
 })
 
-const headerIcon = css({
+const cssHeaderIcon = css({
   width: '5px',
   height: '30px',
   border: '1px solid #82B0D9',
@@ -29,42 +28,48 @@ const headerIcon = css({
   marginRight: '10px'
 })
 
-const headerTitle = css({
+const cssHeaderTitle = css({
   fontSize: '25px',
 })
 
-const image = css({
+const cssImage = css({
   width: '100%',
   height: '350px',
   border: '1px solid #F2E8DC',
   backgroundColor: '#F2E8DC'
 })
 
-const ul = css({
+const cssLists = css({
   listStyle: 'square'
 })
 
-const li = css({
+const cssListItem = css({
   marginBottom: '8px'
 })
 
 const HowtoItem: React.FC<HowtoItemProps> = props => {
-  const { data } = props
-  const itemList = data.content.map((item, index) => (<li css={li} key={index}>{item}</li>))
+  const intl = useIntl()
+  const { title, image, content } = props
+  const itemList = content.map((item, index) => (
+    <li css={cssListItem} key={index}>
+      {intl.formatMessage({ id: item })}
+    </li>
+  ))
+
   return (
     <React.Fragment>
-      <div css={contentWrapper}>
-        <div css={header}>
-          <div css={headerIcon}></div>
-          <div css={headerTitle}>
-            {data.title}
+      <div css={cssContentWrapper}>
+        <div css={cssHeader}>
+          <div css={cssHeaderIcon}></div>
+          <div css={cssHeaderTitle}>
+            {intl.formatMessage({ id: title })}
           </div>
         </div>
         <div>
-          <div css={image}>
-            {data.image}
+          <div css={cssImage}>
+            {image}
           </div>
-          <ul css={ul}>
+          <ul css={cssLists}>
             {itemList}
           </ul>
         </div>
