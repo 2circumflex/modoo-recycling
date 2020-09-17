@@ -72,7 +72,7 @@ const HowTo: React.FC = () => {
   return (
     <Layout>
       <Helmet>
-        <title>How-to</title>
+        <title>분리수거 방법 - 모두의 재활용</title>
       </Helmet>
       <div style={{
         width: '100%'

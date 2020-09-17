@@ -67,7 +67,7 @@ const Header: React.FC = () => {
           }}
         >
           <Button
-            title='분리수거방법'
+            title='분리수거 방법'
             destination='/how-to'
           />
         </div>
