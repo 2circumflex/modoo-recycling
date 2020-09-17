@@ -1,16 +1,72 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Layout from 'components/Layout'
+import HowtoItem, { HowtoItemProps } from 'components/HowtoItem'
 
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core'
+import { jsx } from '@emotion/core'
 
-const listItemHoverOrFocus = css({
-  color: '#000',
-  textDecoration: 'none',
-  '&:hover,&:focus': { color: 'hotpink' },
-  '&:active': { color: 'red' }
-})
+const recyclingInfoList: HowtoItemProps[] = [
+  {
+    title: 'how-to.recyclable_materials.plastic',
+    image: '',
+    content: [
+      'how-to.recyclable_materials_description.plastic_01',
+      'how-to.recyclable_materials_description.plastic_02',
+    ]
+  },
+  {
+    title: 'how-to.recyclable_materials.pet',
+    image: '',
+    content: [
+      'how-to.recyclable_materials_description.pet_01',
+      'how-to.recyclable_materials_description.pet_02',
+    ]
+  },
+  {
+    title: 'how-to.recyclable_materials.vinyl',
+    image: '',
+    content: [
+      'how-to.recyclable_materials_description.vinyl_01',
+      'how-to.recyclable_materials_description.vinyl_02',
+    ]
+  },
+  {
+    title: 'how-to.recyclable_materials.can',
+    image: '',
+    content: [
+      'how-to.recyclable_materials_description.can_01',
+      'how-to.recyclable_materials_description.can_02',
+      'how-to.recyclable_materials_description.can_03',
+      'how-to.recyclable_materials_description.can_04',
+    ]
+  },
+  {
+    title: 'how-to.recyclable_materials.metal',
+    image: '',
+    content: [
+      'how-to.recyclable_materials_description.metal_01',
+    ]
+  },
+  {
+    title: 'how-to.recyclable_materials.glass',
+    image: '',
+    content: [
+      'how-to.recyclable_materials_description.glass_01',
+      'how-to.recyclable_materials_description.glass_02',
+      'how-to.recyclable_materials_description.glass_03',
+    ],
+  },
+  {
+    title: 'how-to.recyclable_materials.paper',
+    image: '',
+    content: [
+      'how-to.recyclable_materials_description.paper_01',
+      'how-to.recyclable_materials_description.paper_02',
+      'how-to.recyclable_materials_description.paper_03',
+    ]
+  }
+]
 
 const HowTo: React.FC = () => {
   return (
@@ -18,33 +74,21 @@ const HowTo: React.FC = () => {
       <Helmet>
         <title>How-to</title>
       </Helmet>
-      <div css={{
-        display: 'flex',
-        width: '100%',
-        justifyContent: 'space-around'
+      <div style={{
+        width: '100%'
       }}>
-        <nav css={{
-          display: 'flex',
-          width: '50%;',
-          height: '100px'
-        }}>
-          <ul css={{
-            width: '100%',
-            listStyle: 'none',
-            display: 'flex',
-            justifyContent: 'space-around',
-            alignItems: 'center;'
-          }}>
-            <li><a href="#plastic" css={listItemHoverOrFocus}>플라스틱</a></li>
-            <li><a href="#vinyl" css={listItemHoverOrFocus}>비닐류</a></li>
-            <li><a href="#bottle" css={listItemHoverOrFocus}>캔/고철</a></li>
-            <li><a href="#glass-bottle" css={listItemHoverOrFocus}>유리병</a></li>
-            <li><a href="#paper" css={listItemHoverOrFocus}>종이류</a></li>
-          </ul>
-        </nav>
+        {
+          recyclingInfoList.map((item: HowtoItemProps, index: number) => {
+            return (
+              <HowtoItem
+                key={index}
+                {...item}
+              />
+            )
+          })
+        }
       </div>
-      {/* TODO(sujin): how-to 내용 추가 */}
-    </Layout>
+    </Layout >
   )
 }
 
