@@ -4,7 +4,7 @@ import { useIntl } from 'gatsby-plugin-intl'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
-interface HowtoItemProps {
+export interface HowtoItemProps {
   title: string
   image: string
   content: string[]

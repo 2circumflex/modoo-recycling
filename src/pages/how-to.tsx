@@ -1,12 +1,12 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Layout from 'components/Layout'
-import HowtoItem from 'components/HowtoItem'
+import HowtoItem, { HowtoItemProps } from 'components/HowtoItem'
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 
-const recyclingInfoList = [
+const recyclingInfoList: HowtoItemProps[] = [
   {
     title: 'how-to.recyclable_materials.plastic',
     image: '',
@@ -55,7 +55,7 @@ const recyclingInfoList = [
       'how-to.recyclable_materials_description.glass_01',
       'how-to.recyclable_materials_description.glass_02',
       'how-to.recyclable_materials_description.glass_03',
-    ]
+    ],
   },
   {
     title: 'how-to.recyclable_materials.paper',
@@ -78,13 +78,11 @@ const HowTo: React.FC = () => {
         width: '100%'
       }}>
         {
-          recyclingInfoList.map((item, index) => {
+          recyclingInfoList.map((item: HowtoItemProps, index: number) => {
             return (
               <HowtoItem
                 key={index}
-                title={item.title}
-                image={item.image}
-                content={item.content}
+                {...item}
               />
             )
           })
