@@ -6,7 +6,7 @@ import HowtoItem from 'components/HowtoItem'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 
-const recyclingInfo = [
+const recyclingInfoList = [
   {
     title: 'how-to.recyclable_materials.plastic',
     image: '',
@@ -78,11 +78,15 @@ const HowTo: React.FC = () => {
         width: '100%'
       }}>
         {
-          recyclingInfo.map((item, index) => {
+          recyclingInfoList.map((item, index) => {
             return (
-              <HowtoItem key={index} title={item.title} image={item.image} content={item.content} />
+              <HowtoItem
+                key={index}
+                title={item.title}
+                image={item.image}
+                content={item.content}
+              />
             )
-
           })
         }
       </div>
