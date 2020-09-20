@@ -1,13 +1,14 @@
 import React from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
+import Img, { FluidObject } from 'gatsby-image'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
 export interface HowtoItemProps {
   title: string
-  image: string
   content: string[]
+  imageFluid: FluidObject
 }
 
 const cssContentWrapper = css({
@@ -32,13 +33,6 @@ const cssHeaderTitle = css({
   fontSize: '25px',
 })
 
-const cssImage = css({
-  width: '100%',
-  height: '350px',
-  border: '1px solid #F2E8DC',
-  backgroundColor: '#F2E8DC'
-})
-
 const cssLists = css({
   listStyle: 'square'
 })
@@ -49,7 +43,7 @@ const cssListItem = css({
 
 const HowtoItem: React.FC<HowtoItemProps> = props => {
   const intl = useIntl()
-  const { title, image, content } = props
+  const { title, content, imageFluid } = props
   const itemList = content.map((item, index) => (
     <li css={cssListItem} key={index}>
       {intl.formatMessage({ id: item })}
@@ -66,9 +60,7 @@ const HowtoItem: React.FC<HowtoItemProps> = props => {
           </div>
         </div>
         <div>
-          <div css={cssImage}>
-            {image}
-          </div>
+          <Img fluid={imageFluid} />
           <ul css={cssLists}>
             {itemList}
           </ul>
