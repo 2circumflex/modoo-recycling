@@ -1,15 +1,14 @@
 import React from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
-import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import Img, { FluidObject } from 'gatsby-image'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
 export interface HowtoItemProps {
   title: string
-  image: string
   content: string[]
+  imageFluid: FluidObject
 }
 
 const cssContentWrapper = css({
@@ -44,41 +43,12 @@ const cssListItem = css({
 
 const HowtoItem: React.FC<HowtoItemProps> = props => {
   const intl = useIntl()
-  const { title, image, content } = props
+  const { title, content, imageFluid } = props
   const itemList = content.map((item, index) => (
     <li css={cssListItem} key={index}>
       {intl.formatMessage({ id: item })}
     </li>
   ))
-
-  const imageDataList = useStaticQuery(graphql`
-    query {
-      allFile(filter: {relativeDirectory: {eq: "how-to"}}) {
-        edges {
-          node {
-            base
-            childImageSharp {
-              fluid {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
-                originalName
-              }
-            }
-          }
-        }
-      }
-    }  
-  `)
-
-  const recyclingImage = imageDataList.allFile.edges
-    .filter(edge => edge.node.childImageSharp.fluid.originalName === image)
-    .map((recyclingImage, index) =>
-      <Img fluid={recyclingImage.node.childImageSharp.fluid} key={index} />
-    )
-
 
   return (
     <React.Fragment>
@@ -90,7 +60,7 @@ const HowtoItem: React.FC<HowtoItemProps> = props => {
           </div>
         </div>
         <div>
-          {recyclingImage}
+          <Img fluid={imageFluid} />
           <ul css={cssLists}>
             {itemList}
           </ul>

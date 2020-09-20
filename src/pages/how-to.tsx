@@ -1,12 +1,19 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Layout from 'components/Layout'
-import HowtoItem, { HowtoItemProps } from 'components/HowtoItem'
+import HowtoItem from 'components/HowtoItem'
+import { useStaticQuery, graphql } from 'gatsby'
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 
-const recyclingInfoList: HowtoItemProps[] = [
+interface RecyclingInfo {
+  title: string
+  image: string
+  content: string[]
+}
+
+const recyclingInfoList: RecyclingInfo[] = [
   {
     title: 'how-to.recyclable_materials.plastic',
     image: 'plastic.png',
@@ -69,6 +76,28 @@ const recyclingInfoList: HowtoItemProps[] = [
 ]
 
 const HowTo: React.FC = () => {
+  const imageDataList = useStaticQuery(graphql`
+    query {
+      allFile(filter: {relativeDirectory: {eq: "how-to"}}) {
+        edges {
+          node {
+            base
+            childImageSharp {
+              fluid {
+                aspectRatio
+                base64
+                sizes
+                src
+                srcSet
+                originalName
+              }
+            }
+          }
+        }
+      }
+    }  
+  `)
+
   return (
     <Layout>
       <Helmet>
@@ -78,10 +107,14 @@ const HowTo: React.FC = () => {
         width: '100%'
       }}>
         {
-          recyclingInfoList.map((item: HowtoItemProps, index: number) => {
+          recyclingInfoList.map((item, index) => {
+            const recyclingImage = imageDataList.allFile.edges
+              .find(edge => edge.node.childImageSharp.fluid.originalName === item.image)
+
             return (
               <HowtoItem
                 key={index}
+                imageFluid={recyclingImage.node.childImageSharp.fluid}
                 {...item}
               />
             )
