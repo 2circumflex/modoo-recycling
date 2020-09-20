@@ -1,5 +1,7 @@
 import React from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
@@ -32,13 +34,6 @@ const cssHeaderTitle = css({
   fontSize: '25px',
 })
 
-const cssImage = css({
-  width: '100%',
-  height: '350px',
-  border: '1px solid #F2E8DC',
-  backgroundColor: '#F2E8DC'
-})
-
 const cssLists = css({
   listStyle: 'square'
 })
@@ -56,6 +51,35 @@ const HowtoItem: React.FC<HowtoItemProps> = props => {
     </li>
   ))
 
+  const imageDataList = useStaticQuery(graphql`
+    query {
+      allFile(filter: {relativeDirectory: {eq: "how-to"}}) {
+        edges {
+          node {
+            base
+            childImageSharp {
+              fluid {
+                aspectRatio
+                base64
+                sizes
+                src
+                srcSet
+                originalName
+              }
+            }
+          }
+        }
+      }
+    }  
+  `)
+
+  const recyclingImage = imageDataList.allFile.edges
+    .filter(edge => edge.node.childImageSharp.fluid.originalName === image)
+    .map((recyclingImage, index) =>
+      <Img fluid={recyclingImage.node.childImageSharp.fluid} key={index} />
+    )
+
+
   return (
     <React.Fragment>
       <div css={cssContentWrapper}>
@@ -66,9 +90,7 @@ const HowtoItem: React.FC<HowtoItemProps> = props => {
           </div>
         </div>
         <div>
-          <div css={cssImage}>
-            {image}
-          </div>
+          {recyclingImage}
           <ul css={cssLists}>
             {itemList}
           </ul>

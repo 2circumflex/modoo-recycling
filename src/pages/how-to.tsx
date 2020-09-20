@@ -9,7 +9,7 @@ import { jsx } from '@emotion/core'
 const recyclingInfoList: HowtoItemProps[] = [
   {
     title: 'how-to.recyclable_materials.plastic',
-    image: '',
+    image: 'plastic.png',
     content: [
       'how-to.recyclable_materials_description.plastic_01',
       'how-to.recyclable_materials_description.plastic_02',
@@ -17,7 +17,7 @@ const recyclingInfoList: HowtoItemProps[] = [
   },
   {
     title: 'how-to.recyclable_materials.pet',
-    image: '',
+    image: 'pet.png',
     content: [
       'how-to.recyclable_materials_description.pet_01',
       'how-to.recyclable_materials_description.pet_02',
@@ -25,7 +25,7 @@ const recyclingInfoList: HowtoItemProps[] = [
   },
   {
     title: 'how-to.recyclable_materials.vinyl',
-    image: '',
+    image: 'vinyl.png',
     content: [
       'how-to.recyclable_materials_description.vinyl_01',
       'how-to.recyclable_materials_description.vinyl_02',
@@ -33,7 +33,7 @@ const recyclingInfoList: HowtoItemProps[] = [
   },
   {
     title: 'how-to.recyclable_materials.can',
-    image: '',
+    image: 'can.png',
     content: [
       'how-to.recyclable_materials_description.can_01',
       'how-to.recyclable_materials_description.can_02',
@@ -43,14 +43,14 @@ const recyclingInfoList: HowtoItemProps[] = [
   },
   {
     title: 'how-to.recyclable_materials.metal',
-    image: '',
+    image: 'metal.png',
     content: [
       'how-to.recyclable_materials_description.metal_01',
     ]
   },
   {
     title: 'how-to.recyclable_materials.glass',
-    image: '',
+    image: 'glass.png',
     content: [
       'how-to.recyclable_materials_description.glass_01',
       'how-to.recyclable_materials_description.glass_02',
@@ -59,7 +59,7 @@ const recyclingInfoList: HowtoItemProps[] = [
   },
   {
     title: 'how-to.recyclable_materials.paper',
-    image: '',
+    image: 'paper.png',
     content: [
       'how-to.recyclable_materials_description.paper_01',
       'how-to.recyclable_materials_description.paper_02',
