@@ -1,17 +1,13 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Layout from 'components/Layout'
-import HowtoItem from 'components/HowtoItem'
+import HowtoItem, { HowtoItemProps } from 'components/HowtoItem'
 import { useStaticQuery, graphql } from 'gatsby'
 
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 
-interface RecyclingInfo {
-  title: string
-  image: string
-  content: string[]
-}
+type RecyclingInfo = Omit<HowtoItemProps, 'imageFluid'>
 
 const recyclingInfoList: RecyclingInfo[] = [
   {
