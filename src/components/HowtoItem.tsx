@@ -7,6 +7,7 @@ import { jsx, css } from '@emotion/core'
 
 export interface HowtoItemProps {
   title: string
+  image: string
   content: string[]
   imageFluid: FluidObject
 }
